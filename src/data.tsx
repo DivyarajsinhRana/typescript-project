@@ -1,22 +1,20 @@
-import {  ReactElement } from 'react'
-import Home from './pages/Home';
-import About from './pages/About';
-import Profile from './pages/Profile';
-import ProfilePosts from './pages/ProfilePosts';
-import ProfilePhotos from './pages/ProfilePhotos';
-import ProfilePeople from './pages/ProfilePeople';
-import NotFound from './pages/NotFound';
-import MainLayout from './layout/MainLayout';
-
+import { ReactElement } from 'react'
+import Home from './pages/Home'
+import About from './pages/About'
+import Profile from './pages/Profile'
+import ProfilePosts from './pages/ProfilePosts'
+import ProfilePhotos from './pages/ProfilePhotos'
+import ProfilePeople from './pages/ProfilePeople'
+import NotFound from './pages/NotFound'
+import MainLayout from './layout/MainLayout'
 
 export interface MyRoutes {
-  path: string;
-  element: ReactElement<any, any>;
-  children: MyRoutes[];
-  header: string;
-  parent?: MyRoutes;
-  location?:string
-
+  path: string
+  element: ReactElement<any, any>
+  children: MyRoutes[]
+  header: string
+  parent?: MyRoutes
+  location?: string
 }
 
 export const routes: MyRoutes[] = [
@@ -35,7 +33,7 @@ export const routes: MyRoutes[] = [
         element: <About />,
         children: [],
         header: 'About',
-        location:'/layout/about'
+        location: '/layout/about',
       },
       {
         path: 'profile/*',
@@ -46,29 +44,29 @@ export const routes: MyRoutes[] = [
             element: <ProfilePosts />,
             children: [],
             header: 'Profile Post',
-            location:'/layout/profile/posts'
+            location: '/layout/profile/posts',
           },
           {
             path: 'photos',
             element: <ProfilePhotos />,
             children: [],
             header: 'Profile Photos',
-            location:'/layout/profile/photos'
+            location: '/layout/profile/photos',
           },
           {
             path: ':id',
             element: <ProfilePeople />,
             children: [],
             header: 'Profile Peaoples',
-            location:'/layout/profile/photos'
+            location: '/layout/profile/photos',
           },
         ],
         header: 'Profile',
-        location:'/layout/profile'
+        location: '/layout/profile',
       },
     ],
     header: 'Layout',
-    location:'/layout'
+    location: '/layout',
   },
   {
     path: '*',
@@ -77,6 +75,3 @@ export const routes: MyRoutes[] = [
     header: 'Profile',
   },
 ]
-  
-
-
